@@ -33,7 +33,6 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
         assert fruit != null;
         fruitImage.setImageResource(fruit.getImageId());
         fruitName.setText(fruit.getName());
-        System.out.println(fruit.getName());
         return view;
     }
 }

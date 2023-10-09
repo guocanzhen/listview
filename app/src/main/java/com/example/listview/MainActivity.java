@@ -2,6 +2,7 @@ package com.example.listview;
 
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
         FruitAdapter adapter = new FruitAdapter(MainActivity.this, R.layout.fruit_item, fruitList);
         ListView listView = findViewById(R.id.list_view);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Fruit fruit = fruitList.get(position);
+            Toast.makeText(this, fruit.getName(), Toast.LENGTH_SHORT).show();
+        });
     }
 
     private void initFruit() {
